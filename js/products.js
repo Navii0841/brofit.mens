@@ -58,6 +58,11 @@ const CATEGORIES = [
     name: "Baggy Shirts",
     image: "assets/BAGGY.jpeg"
   },
+  {
+    id: "mon-fit-pants",
+    name: "Mom-Fit Pants",
+    image: "assets/BAGGY.jpeg"
+  },
 ];
 
 const PRODUCTS = [

@@ -33,50 +33,33 @@
    ========================================================================== */
 
 const CATEGORIES = [
-  {
-    id: "baggy-pants",
-    name: "Baggy Pants",
-    image: "assets/BAGGY.jpeg"
-  },
-   {
-    id: "baggy-shirts",
-    name: "Baggy Shirts",
-    image: "assets/BAGGY.jpeg"
-  },
-  {
-    id: "formal-shirts",
-    name: "Formal Shirts",
-    image: "assets/BAGGY.jpeg"
-  },
-  {
-    id: "mon-fit-pants",
-    name: "Mom-Fit Pants",
-    image: "assets/BAGGY.jpeg"
-  },
-  {
-    id: "jerseys",
-    name: "Jerseys",
-    image: "assets/BAGGY.jpeg"
-  },
-  {
-    id: "printed-T-shirts",
-    name: "Printed-T-shirts",
-    image: "assets/BAGGY.jpeg"
-  },
-  {
-    id: "embroidered shirts",
-    name: "Embroidered Shirts",
-    image: "assets/BAGGY.jpeg"
-  },
-  {
-    id: "track-pants",
-    name: "Track Pants",
-    image: "assets/BAGGY.jpeg"
-  },
-  
- 
-  
+  /* ---- MAIN CATEGORIES (these show on the homepage) ---- */
+  { id: "pants", name: "Pants", image: "assets/BAGGY.jpeg" },
+  { id: "shirts", name: "Shirts", image: "assets/BAGGY.jpeg" },
+  { id: "tshirts", name: "T-Shirts", image: "assets/BAGGY.jpeg" },
+
+  /* ---- SUB-STYLES under PANTS ---- */
+  { id: "baggy-pants", name: "Baggy Pants", image: "assets/BAGGY.jpeg", parent: "pants" },
+  { id: "polo-fit-pants", name: "Polo-Fit Pants", image: "assets/BAGGY.jpeg", parent: "pants" },
+  { id: "Korean-baggy-pants", name: "Korean Baggy Pants", image: "assets/BAGGY.jpeg", parent: "pants" },
+  { id: "Boot-cut-pants", name: "Boot Cut Pants", image: "assets/BAGGY.jpeg", parent: "pants" },
+  { id: "Gurkha-pants", name: "Gurkha Pants", image: "assets/BAGGY.jpeg", parent: "pants" },
+  { id: "mom-fit-pants", name: "Mom-Fit Pants", image: "assets/BAGGY.jpeg", parent: "pants" },
+  { id: "track-pants", name: "Track Pants", image: "assets/BAGGY.jpeg", parent: "pants" },
+
+  /* ---- SUB-STYLES under SHIRTS ---- */
+  { id: "baggy-shirts", name: "Baggy Shirts", image: "assets/BAGGY.jpeg", parent: "shirts" },
+  { id: "formal-shirts", name: "Formal Shirts", image: "assets/BAGGY.jpeg", parent: "shirts" },
+  { id: "embroidered-shirts", name: "Embroidered Shirts", image: "assets/BAGGY.jpeg", parent: "shirts" },
+
+  /* ---- SUB-STYLES under T-SHIRTS ---- */
+  { id: "jerseys", name: "Jerseys", image: "assets/BAGGY.jpeg", parent: "tshirts" },
+  { id: "printed-T-shirts", name: "Printed-T-shirts", image: "assets/BAGGY.jpeg", parent: "tshirts" },
 ];
+
+/* TO ADD A NEW SUB-STYLE:
+   Copy a line above, give it a new id + name, and set "parent" to one of:
+   "pants", "shirts", or "tshirts". Then use that new id as a product's "category". */
 
 const PRODUCTS = [
   {
@@ -214,7 +197,7 @@ const PRODUCTS = [
   {
     id: "pj-001",
     name: "Monogram Printed Jersey",
-    category: "printed-jerseys",
+    category: "printed-T-shirts",
     price: 949,
     images: [
       "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=1000&q=80&auto=format&fit=crop"
@@ -226,7 +209,7 @@ const PRODUCTS = [
   {
     id: "pj-002",
     name: "Street Graphic Printed Jersey",
-    category: "printed-jerseys",
+    category: "printed-T-shirts",
     price: 999,
     images: [
       "https://images.unsplash.com/photo-1622445275576-721325763afe?w=1000&q=80&auto=format&fit=crop"

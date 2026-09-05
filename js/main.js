@@ -15,6 +15,14 @@ function categoryById(id) {
   return CATEGORIES.find((c) => c.id === id);
 }
 
+function topLevelCategories() {
+  return CATEGORIES.filter((c) => !c.parent);
+}
+
+function childCategories(parentId) {
+  return CATEGORIES.filter((c) => c.parent === parentId);
+}
+
 function productById(id) {
   return PRODUCTS.find((p) => p.id === id);
 }
@@ -134,7 +142,7 @@ function renderHome() {
         <span class="sub">swipe →</span>
       </div>
       <div class="category-scroller">
-        ${CATEGORIES.map(categoryCardHTML).join("")}
+        ${topLevelCategories().map(categoryCardHTML).join("")}
       </div>
     </section>
     
@@ -160,11 +168,32 @@ function renderHome() {
 function renderCategory(catId) {
   const cat = categoryById(catId);
   if (!cat) return renderNotFound();
+
+  const children = childCategories(catId);
+
+  if (children.length) {
+    app.innerHTML = `
+      ${headerHTML()}
+      <a class="detail-back" href="#/">← Back</a>
+      <section class="hero" style="padding-top:6px;">
+        <h1 style="font-size:24px;">${cat.name}</h1>
+        <p class="tag">CHOOSE A STYLE</p>
+      </section>
+      <section class="section" style="padding-top:0;">
+        <div class="product-grid">
+          ${children.map(categoryCardHTML).join("")}
+        </div>
+      </section>
+      ${footerHTML()}
+    `;
+    return;
+  }
+
   const items = productsInCategory(catId);
 
   app.innerHTML = `
     ${headerHTML()}
-    <a class="detail-back" href="#/">← Back</a>
+    <a class="detail-back" href="#/category/${cat.parent || ""}">← Back${cat.parent ? ` to ${categoryById(cat.parent)?.name || ""}` : ""}</a>
     <section class="hero" style="padding-top:6px;">
       <h1 style="font-size:24px;">${cat.name}</h1>
       <p class="tag">${items.length} PRODUCT${items.length === 1 ? "" : "S"}</p>

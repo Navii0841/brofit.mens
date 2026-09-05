@@ -272,6 +272,17 @@ header.site-header {
   text-align: center;
 }
 
+.product-grid .category-card {
+  width: 100%;
+  margin: 0;
+}
+
+.product-grid .category-card .thumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+}
+
 .category-card .thumb {
   width: 128px;
   height: 160px;

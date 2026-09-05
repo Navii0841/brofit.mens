@@ -38,9 +38,19 @@ const CATEGORIES = [
     name: "Baggy Pants",
     image: "assets/BAGGY.jpeg"
   },
+   {
+    id: "baggy-shirts",
+    name: "Baggy Shirts",
+    image: "assets/BAGGY.jpeg"
+  },
   {
     id: "formal-shirts",
     name: "Formal Shirts",
+    image: "assets/BAGGY.jpeg"
+  },
+  {
+    id: "mon-fit-pants",
+    name: "Mom-Fit Pants",
     image: "assets/BAGGY.jpeg"
   },
   {
@@ -54,15 +64,18 @@ const CATEGORIES = [
     image: "assets/BAGGY.jpeg"
   },
   {
-    id: "baggy-shirts",
-    name: "Baggy Shirts",
+    id: "embroidered shirts",
+    name: "Embroidered Shirts",
     image: "assets/BAGGY.jpeg"
   },
   {
-    id: "mon-fit-pants",
-    name: "Mom-Fit Pants",
+    id: "track-pants",
+    name: "Track Pants",
     image: "assets/BAGGY.jpeg"
   },
+  
+ 
+  
 ];
 
 const PRODUCTS = [

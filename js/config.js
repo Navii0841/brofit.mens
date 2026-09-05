@@ -13,7 +13,7 @@ const BRAND = {
   whatsappNumber: "919787102865",
 
   // Instagram handle without the @ symbol
-  instagramHandle: "brofit_mens.wear",
+  instagramHandle: "brofit.menswear",
 
   // Shop address, shown on the Location section
   locationName: "BROFIT MENSWEAR",
